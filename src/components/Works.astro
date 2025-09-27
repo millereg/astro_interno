@@ -1,0 +1,27 @@
+---
+import Container from "@components/Container.astro";
+import Work from "@components/Work.astro";
+
+const WORKS = Array.from({ length: 4 }, (_, i) => ({
+    image: `work/0${i + 1}.png`,
+}));
+---
+
+<Container
+    ClassNameSection="work"
+    ClassNameMargin="xl:mt-[150px]"
+    ClassNameContainer="xl:px-0"
+>
+    <div class="text-center mb-24">
+        <h2 class="work__title h2 mb-4">Follow Our Projects</h2>
+        <p class="work__subtitle max-w-3xl mx-auto">
+            It is a long established fact that a reader will be distracted by
+            the readable content of page lookings at its layout points.
+        </p>
+    </div>
+    <div
+        class="work__grid grid grid-cols-1 xl:grid-cols-2 gap-x-[104px] gap-y-[56px]"
+    >
+        {WORKS.map((item) => <Work image={item.image} />)}
+    </div>
+</Container>

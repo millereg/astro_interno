@@ -1,0 +1,15 @@
+---
+const { subtitle, icon, paragraph } = Astro.props;
+---
+
+<div class="steps__step text-center">
+    <div class="mb-4">
+        <i class:list={["text-5xl text-accent", icon]}></i>
+    </div>
+    <h3 class="h3 mb-5">{subtitle}</h3>
+    <p class="mb-5 max-w-md mx-auto">{paragraph}</p>
+    <a href="#" class="font-medium flex justify-center gap-2">
+        Read more
+        <i class="ri-arrow-right-line text-accent"></i>
+    </a>
+</div>

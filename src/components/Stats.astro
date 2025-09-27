@@ -1,0 +1,38 @@
+---
+import Container from "@components/Container.astro";
+
+const STATS = [
+    {
+        number: 12,
+        label: "Years Of Experience",
+        border: "xl:border-r xl:border-accent",
+    },
+    {
+        number: 85,
+        label: "Projects Completed",
+        border: "xl:border-r xl:border-accent",
+    },
+    {
+        number: 15,
+        label: "Active Projects",
+        border: "xl:border-r xl:border-accent",
+    },
+    { number: 95, label: "Happy Customers", border: "" },
+] as const;
+---
+
+<Container
+    ClassNameSection="stats bg-accent-secondary py-[80px] xl:py-[150px]"
+    ClassNameMargin="xl:mt-[150px]"
+>
+    <div class="grid grid-cols-1 xl:grid-cols-4 gap-12">
+        {
+            STATS.map(({ number, label, border }) => (
+                <div class={`stats__item text-center ${border}`}>
+                    <h3 class="h1 font-primary !text-accent">{number}</h3>
+                    <p>{label}</p>
+                </div>
+            ))
+        }
+    </div>
+</Container>

@@ -1,0 +1,44 @@
+---
+import Container from "@components/Container.astro";
+import New from "@components/New.astro";
+
+const NEWS = [
+    {
+        title: "Let´s Get Solution For Building Construction Work",
+        date: "22 June,2024",
+        image: "news/01.png",
+    },
+    {
+        title: "Low Cost Latest Invented Interior Designing Ideas",
+        date: "24 June,2024",
+        image: "news/02.png",
+    },
+    {
+        title: "Best For Any Office & Business Interior Solution",
+        date: "28 June,2024",
+        image: "news/03.png",
+    },
+] as const;
+---
+
+<Container
+    ClassNameSection="news"
+    ClassNameContainer="px-0"
+    ClassNameMargin="xl:mt-[150px]"
+>
+    <div class="max-w-[810px] mx-auto text-center mb-[52px]">
+        <h2 class="news__title h2 mb-3">Articles & News</h2>
+        <p class="news__subtitle">
+            It is a long established fact that a reader will be distracted by
+            the of readable content of a page when lookings at its layouts the
+            points of using.
+        </p>
+    </div>
+    <div class="news__grid grid grid-cols-1 xl:grid-cols-3 gap-[27px]">
+        {
+            NEWS.map(({ title, date, image }) => (
+                <New title={title} date={date} image={image} />
+            ))
+        }
+    </div>
+</Container>

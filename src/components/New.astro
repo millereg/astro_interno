@@ -1,0 +1,20 @@
+---
+const { title, date, image } = Astro.props;
+---
+
+<div
+    class="news__item w-full max-w-[382px] h-[520px] border border-primary/20 rounded-[62px] p-[20px] hover:bg-accent-secondary transition-all group cursor-pointer mx-auto xl:mx-0"
+>
+    <img class="mb-5" src={image} alt="New Article" />
+    <div class="flex flex-col gap-[30px]">
+        <h3 class="h3">{title}</h3>
+        <div class="flex items-center justify-between">
+            <p class="text-base">{date}</p>
+            <button
+                class="bg-accent-secondary w-[52px] h-[52px] rounded-full group-hover:bg-white transition-all"
+            >
+                <i class="ri-arrow-right-s-line text-3xl text-primary pl-1"></i>
+            </button>
+        </div>
+    </div>
+</div>

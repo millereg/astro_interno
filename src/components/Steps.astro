@@ -1,0 +1,35 @@
+---
+import Step from "@components/Step.astro";
+import Container from "@components/Container.astro";
+
+const STEPS = [
+    {
+        icon: "ri-compasses-2-line",
+        title: "Project Planning",
+        paragraph:
+            "There are many variations of the passages of lorem Ipsum from available, majority.",
+    },
+    {
+        icon: "ri-magic-line",
+        title: "Gaining Materials",
+        paragraph:
+            "There are many variations of the passages of lorem Ipsum from available, majority.",
+    },
+    {
+        icon: "ri-tools-line",
+        title: "Project Execution",
+        paragraph:
+            "There are many variations of the passages of lorem Ipsum from available, majority.",
+    },
+] as const;
+---
+
+<Container ClassNameSection="steps">
+    <div class="grid grid-cols-1 gap-12 xl:grid-cols-3">
+        {
+            STEPS.map(({ icon, title, paragraph }) => (
+                <Step icon={icon} subtitle={title} paragraph={paragraph} />
+            ))
+        }
+    </div>
+</Container>

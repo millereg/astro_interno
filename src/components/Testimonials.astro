@@ -1,0 +1,57 @@
+---
+import Container from "@components/Container.astro";
+import Testimonial from "@components/Testimonial.astro";
+
+const SLIDES = [
+    {
+        image: "testimonial/01.png",
+        name: "Nattasha Mith",
+        location: "Greenville, USA",
+        text: "Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.",
+    },
+    {
+        image: "testimonial/02.png",
+        name: "Jessica White",
+        location: "Oak Ridge, USA",
+        text: "Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.",
+    },
+    {
+        image: "testimonial/03.png",
+        name: "Mike Davis",
+        location: "Berlim, Germany",
+        text: "Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.",
+    },
+    {
+        image: "testimonial/04.png",
+        name: "Olivia Wilson",
+        location: "Blue Ridge, France",
+        text: "Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.",
+    },
+] as const;
+---
+
+<Container
+    ClassNameSection="testimonial"
+    ClassNameContainer="testimonial__bg bg-accent-secondary rounded-[70px] px-6"
+>
+    <div class="flex flex-col items-center pt-[88px] pb-[110px]">
+        <h2 class="testimonial__title h2 mb-9 text-center">What clients say</h2>
+        <div class="w-full">
+            <div class="testimonial__slider swiper h-[400px]">
+                <div class="swiper-wrapper">
+                    {
+                        SLIDES.map(({ image, name, location, text }) => (
+                            <Testimonial
+                                image={image}
+                                name={name}
+                                location={location}
+                                text={text}
+                            />
+                        ))
+                    }
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</Container>

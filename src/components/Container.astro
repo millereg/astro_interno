@@ -1,0 +1,15 @@
+---
+const {
+    ClassNameSection,
+    ClassNameContainer,
+    ClassNameMargin = "xl:mt-[200px]",
+} = Astro.props;
+---
+
+<section
+    class:list={["mt-[80px] relative z-20", ClassNameSection, ClassNameMargin]}
+>
+    <div class:list={["container mx-auto", ClassNameContainer]}>
+        <slot />
+    </div>
+</section>

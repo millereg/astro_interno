@@ -1,0 +1,18 @@
+---
+const { image } = Astro.props;
+---
+
+<div class="w-full max-w-[548px] h-full mx-auto">
+    <img class="mb-6" src={image} alt="Work Image" />
+    <div class="flex justify-between items-center w-full">
+        <div class="">
+            <h3 class="h3">Modern Kitchen</h3>
+            <p>Decor/Architecture</p>
+        </div>
+        <button
+            class="bg-accent-secondary hover:bg-accent/20 w-[70px] h-[70px] rounded-full"
+        >
+            <i class="ri-arrow-right-s-line text-3xl text-primary pl-1"></i>
+        </button>
+    </div>
+</div>
